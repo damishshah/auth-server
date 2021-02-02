@@ -1,0 +1,39 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon src/server.js",
+    "createdb": "node dynamodb/createUserTable.js",
+    "deletedb": "node dynamodb/deleteUserTable.js",
+    "test": "jest ./tst --silent --runInBand --force-exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.1",
+    "aws-sdk": "^2.824.0",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.3",
+    "express-validator": "^6.9.2",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@shelf/jest-dynamodb": "^1.7.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.1"
+  },
+  "jest": {
+    "preset": "@shelf/jest-dynamodb"
+  }
+}
