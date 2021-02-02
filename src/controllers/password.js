@@ -32,7 +32,7 @@ exports.recover = async (req, res) => {
                     <p>Please click on the following <a href="${link}">link</a> to reset your password.</p> 
                     <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>`;
 
-      console.log(`generated password reset link: ${link}`);
+      // console.log(`Generated password reset link: ${link}`);
       sendEmail({ to, from, subject, html });
 
       res.status(200).json({

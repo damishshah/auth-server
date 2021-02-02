@@ -180,7 +180,7 @@ async function sendVerificationEmail(user, req, res) {
                   <br><p>If you did not request this, please ignore this email.</p>`;
 
     console.log(link);
-    await sendEmail({ to, from, subject, html });
+    sendEmail({ to, from, subject, html });
 
     res.status(200).json({
       userId: user.id,

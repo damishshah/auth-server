@@ -7,6 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 function sendEmail(mailOptions) {
   return new Promise((resolve, reject) => {
     sgMail.send(mailOptions, (error, result) => {
+      console.error("result was, ", result);
       if (error) return reject(error);
       return resolve(result);
     });

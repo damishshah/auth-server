@@ -34,6 +34,9 @@
     "supertest": "^6.1.1"
   },
   "jest": {
-    "preset": "@shelf/jest-dynamodb"
+    "preset": "@shelf/jest-dynamodb",
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   }
 }

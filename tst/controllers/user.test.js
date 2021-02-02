@@ -4,6 +4,8 @@ const request = require("supertest");
 const { createTestUser, testPassword } = require("auth-server/tst/utils");
 const { UserSchema } = require("auth-server/src/models/user");
 
+beforeEach(() => mockMailer());
+
 describe("Test user functions", () => {
   test("GET path", async () => {
     // Create fake user

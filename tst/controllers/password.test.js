@@ -4,6 +4,8 @@ const request = require("supertest");
 const { createTestUser, testPassword } = require("auth-server/tst/utils");
 const { UserSchema } = require("auth-server/src/models/user");
 
+beforeEach(() => mockMailer());
+
 describe("Test password functions", () => {
   test("Recover path", async () => {
     // Create fake user
@@ -52,8 +54,6 @@ describe("Test password functions", () => {
         confirmPassword: newPassword,
         token: token,
       });
-
-    console.error(JSON.stringify(response));
 
     // Confirmsponse
     expect(response.statusCode).toBe(200);

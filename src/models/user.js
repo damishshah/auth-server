@@ -202,7 +202,7 @@ class UserSchema {
       .promise()
       .then((data) => {
         if (data && data.Items && data.Items.length) {
-          console.log(`Query succeeded. Found data: ${JSON.stringify(data)}`);
+          // console.log(`Query succeeded. Found data: ${JSON.stringify(data)}`);
           return UserSchema.createFromItem(data.Items[0]);
         }
       })

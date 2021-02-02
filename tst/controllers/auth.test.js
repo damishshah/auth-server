@@ -14,6 +14,8 @@ const {
   testPassword,
 } = require("auth-server/tst/utils");
 
+beforeEach(() => mockMailer());
+
 describe("Test authentication functions", () => {
   test("Root path", async () => {
     const response = await request(app).get("/api/auth/");
